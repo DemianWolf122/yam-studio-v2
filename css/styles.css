@@ -1,0 +1,664 @@
+/* ============================================================
+   Yam studio · Landing v2 — estilos
+   Monocromo cálido moka/latte · mobile-first · breakpoint 880px
+   ============================================================ */
+
+:root {
+  /* Paleta (únicos colores permitidos) */
+  --moka: #3E2C23;          /* moka profundo */
+  --marron-medio: #5C453A;
+  --taupe: #8A7263;
+  --latte: #C9B39F;
+  --crema: #F0E6DA;
+  --blanco-calido: #FAF5EE;
+  --overlay-moka: #4A342A;  /* tinte de fotos */
+
+  --radius: 20px;
+  --sombra: 0 8px 30px rgba(62, 44, 35, 0.25);
+  --transicion: 250ms ease;
+
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Jost', sans-serif;
+}
+
+/* ---------- Reset básico ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--moka);
+  background-color: var(--crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background-color: var(--latte);
+  color: var(--moka);
+}
+
+:focus-visible {
+  outline: 2px solid var(--taupe);
+  outline-offset: 3px;
+}
+
+/* ---------- Utilidades ---------- */
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--moka);
+  margin-bottom: 1.5rem;
+}
+
+.section-title--clara {
+  color: var(--crema);
+}
+
+/* ---------- Overlay moka sobre fotos (ninguna foto se ve cruda) ---------- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-moka);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.overlay--hero    { opacity: 0.55; } /* heros: 45–60% */
+.overlay--espacio { opacity: 0.45; } /* secundarias: 35–50% */
+.overlay--detalle { opacity: 0.40; }
+.overlay--paola   { opacity: 0.40; }
+
+.hero__bg img,
+.espacio__bg img,
+.foto img {
+  filter: sepia(0.25) saturate(0.85);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 999px;
+  padding: 0.9rem 2.2rem;
+  transition: background-color var(--transicion), color var(--transicion), border-color var(--transicion);
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: var(--blanco-calido);
+  color: var(--moka);
+}
+
+.btn--primary:hover {
+  background-color: var(--crema);
+}
+
+.btn--outline {
+  background-color: transparent;
+  border: 1px solid var(--crema);
+  color: var(--crema);
+}
+
+.btn--outline:hover {
+  background-color: rgba(240, 230, 218, 0.12);
+}
+
+.btn--dark {
+  background-color: var(--moka);
+  color: var(--crema);
+}
+
+.btn--dark:hover {
+  background-color: var(--marron-medio);
+}
+
+/* ---------- Tarjetas ---------- */
+.card {
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+}
+
+.card--light {
+  background-color: var(--blanco-calido);
+  color: var(--moka);
+}
+
+.card--dark {
+  background-color: var(--moka);
+  color: var(--crema);
+}
+
+/* ---------- Fotos secundarias ---------- */
+.foto {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Navbar ---------- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: transparent;
+  transition: background-color var(--transicion), box-shadow var(--transicion);
+}
+
+.nav__inner {
+  max-width: 1140px;
+  margin-inline: auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav__logo {
+  font-family: var(--font-script);
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--blanco-calido);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+
+.nav__links {
+  display: none;
+}
+
+.nav__cta {
+  display: none;
+}
+
+/* Navbar solidificada al scrollear */
+.nav.is-solid {
+  background-color: var(--crema);
+  box-shadow: 0 4px 20px rgba(62, 44, 35, 0.12);
+}
+
+.nav.is-solid .nav__logo {
+  color: var(--moka);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__bg picture,
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__bg img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 5.5rem 1.5rem 3rem;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero__brand {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(3rem, 12vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--blanco-calido);
+}
+
+.hero__kicker {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--crema);
+}
+
+.hero__tagline {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--crema);
+}
+
+.hero__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero__lead {
+  max-width: 34rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--crema);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.hero__location {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--latte);
+}
+
+/* ---------- Sección El espacio ---------- */
+.espacio {
+  position: relative;
+  padding: 3.5rem 0 4rem;
+  scroll-margin-top: 4rem;
+}
+
+.espacio__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.espacio__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.espacio__layout {
+  position: relative;
+  z-index: 1;
+}
+
+.espacio__card {
+  width: 100%;
+  padding: 2.25rem 1.75rem;
+}
+
+.espacio__card p + p {
+  margin-top: 1rem;
+}
+
+.pilares {
+  list-style: none;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.pilares li {
+  font-size: 0.95rem;
+  color: var(--marron-medio);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.pilares li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background-color: var(--latte);
+}
+
+.paola {
+  margin: 2rem 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(138, 114, 99, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.paola__foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.paola__nombre {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.paola__rol {
+  font-size: 0.85rem;
+  color: var(--marron-medio); /* AA: 8.2:1 sobre blanco cálido (taupe daba 4.15:1) */
+  margin-bottom: 0.75rem;
+}
+
+.espacio__cta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.nota {
+  font-size: 0.85rem;
+  color: var(--marron-medio); /* AA: 8.2:1 sobre blanco cálido (taupe daba 4.15:1) */
+}
+
+.nota--clara {
+  color: var(--latte);
+}
+
+.espacio__detalle {
+  display: none;
+}
+
+/* ---------- Sección Contacto ---------- */
+.contacto {
+  background-color: var(--crema);
+  padding: 4rem 0 0;
+  scroll-margin-top: 4rem;
+}
+
+.contacto__card {
+  padding: 2.25rem 1.75rem;
+}
+
+.contacto__intro {
+  font-weight: 300;
+  max-width: 32rem;
+}
+
+.contacto__datos {
+  margin: 1.75rem 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contacto__item dt {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--latte);
+  margin-bottom: 0.25rem;
+}
+
+.link-claro {
+  color: var(--crema);
+  text-decoration-color: var(--latte);
+  text-underline-offset: 4px;
+  transition: color var(--transicion);
+}
+
+.link-claro:hover {
+  color: var(--blanco-calido);
+}
+
+.contacto__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+/* Cierre de marca (footer de página, hijo directo de <body>) */
+.cierre {
+  text-align: center;
+  background-color: var(--crema);
+  padding: 3.5rem 1.5rem 2.5rem;
+}
+
+.cierre__marca {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: var(--moka);
+}
+
+.cierre__slogan {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--marron-medio); /* AA: 7.2:1 sobre crema (taupe daba 3.65:1) */
+  margin-top: 0.25rem;
+}
+
+.cierre__pie {
+  margin-top: 1.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--marron-medio); /* AA: 7.2:1 sobre crema (taupe daba 3.65:1) */
+}
+
+/* ---------- Reveal sutil ---------- */
+/* Solo oculta cuando <html> tiene la clase .js (la agrega un script inline
+   en el <head>): sin JavaScript, el contenido queda siempre visible. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   Desktop (≥ 880px)
+   ============================================================ */
+@media (min-width: 880px) {
+
+  .nav__inner {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav__logo {
+    font-size: 1.9rem;
+  }
+
+  .nav__links {
+    display: flex;
+    gap: 2.25rem;
+  }
+
+  .nav__links a {
+    font-size: 0.78rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    color: var(--crema);
+    transition: color var(--transicion);
+  }
+
+  .nav__links a:hover {
+    color: var(--blanco-calido);
+  }
+
+  .nav.is-solid .nav__links a {
+    color: var(--moka);
+  }
+
+  .nav.is-solid .nav__links a:hover {
+    color: var(--marron-medio);
+  }
+
+  .nav__cta {
+    display: inline-block;
+    padding: 0.65rem 1.6rem;
+  }
+
+  .hero__content {
+    padding: 7rem 1.5rem 4rem;
+  }
+
+  .hero__brand {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+  }
+
+  .hero__tagline {
+    font-size: 0.95rem;
+  }
+
+  .hero__ctas {
+    flex-direction: row;
+  }
+
+  .espacio {
+    padding: 7rem 0;
+  }
+
+  .espacio__layout {
+    display: flex;
+    align-items: stretch;
+    gap: 3rem;
+  }
+
+  .espacio__card {
+    width: 47%;
+    flex: 0 0 47%;
+    padding: 3rem 2.75rem;
+  }
+
+  .paola {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .paola__foto {
+    flex: 0 0 38%;
+    aspect-ratio: 3 / 4;
+  }
+
+  .espacio__detalle {
+    display: block;
+    flex: 1;
+    align-self: center;
+    max-height: 520px;
+    aspect-ratio: 3 / 4;
+    margin-left: auto;
+  }
+
+  .contacto {
+    padding: 7rem 0 0;
+  }
+
+  .contacto__card {
+    padding: 3.25rem 3rem;
+  }
+
+  .contacto__datos {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 2.5rem;
+  }
+
+  .contacto__cta {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .cierre {
+    padding: 5rem 1.5rem 3rem;
+  }
+}

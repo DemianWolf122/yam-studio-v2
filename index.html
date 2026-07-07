@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yam studio — Pilates reformer y mat en Punta Mogotes, Mar del Plata</title>
+  <meta name="description" content="Yam studio es un estudio de pilates reformer y mat en Punta Mogotes, Mar del Plata. Grupos reducidos, atención personalizada y un espacio íntimo y luminoso para entrenar con calma. La energía de fluir en movimiento.">
+  <meta name="theme-color" content="#3E2C23">
+  <!-- Marca que hay JS activo: el efecto reveal del CSS solo oculta contenido si esta clase está presente (sin JS, todo queda visible) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Yam studio — Pilates reformer y mat en Punta Mogotes, Mar del Plata">
+  <meta property="og:description" content="Grupos reducidos, atención personalizada y un espacio íntimo y luminoso para entrenar con calma. La energía de fluir en movimiento.">
+  <!-- TODO: cuando se conozca el dominio final, reemplazar por URL ABSOLUTA (los scrapers de redes sociales no resuelven rutas relativas), p. ej.: https://dominio.com/v2-assets/fondo-hero-desktop.jpg -->
+  <meta property="og:image" content="v2-assets/fondo-hero-desktop.jpg">
+
+  <!-- Tipografías: Great Vibes (marca) + Jost (todo lo demás) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__logo">Yam studio</a>
+      <nav class="nav__links" aria-label="Secciones del sitio">
+        <a href="#inicio">Inicio</a>
+        <a href="#el-espacio">El espacio</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <!-- TODO: reemplazar por el link real de WhatsApp: https://wa.me/54XXXXXXXXXX -->
+      <a href="#" data-wa="" class="btn btn--primary nav__cta" aria-label="Escribinos por WhatsApp (número a confirmar)">Escribinos</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ SECCIÓN 1 · HERO ============ -->
+    <!--
+      NOTA (conflicto documentado brief vs. guía de estética):
+      la guía (sección 4, punto 5) pide "solo foto + título + tagline + botón" en el hero,
+      pero el brief de contenido (sección Hero) exige además: H1 marca+rubro (kicker),
+      bajada, CTA secundario a Instagram y micro-dato de ubicación.
+      Según la propia guía (sección 8), en contenido manda el brief → se mantienen esos elementos.
+    -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg">
+        <picture>
+          <source media="(min-width: 880px)" srcset="v2-assets/fondo-hero-desktop.jpg">
+          <img src="v2-assets/fondo-hero-mobile.jpg" alt="Estudio de pilates Yam studio en Punta Mogotes, Mar del Plata" fetchpriority="high">
+        </picture>
+        <span class="overlay overlay--hero" aria-hidden="true"></span>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__top">
+          <h1 class="hero__title">
+            <span class="hero__brand">Yam studio</span>
+            <span class="hero__kicker">Pilates en Punta Mogotes</span>
+          </h1>
+          <p class="hero__tagline">La energía de fluir en movimiento</p>
+        </div>
+
+        <div class="hero__bottom">
+          <div class="hero__ctas">
+            <!-- TODO: reemplazar por el link real de WhatsApp: https://wa.me/54XXXXXXXXXX -->
+            <a href="#" data-wa="" class="btn btn--primary">Consultá por WhatsApp</a>
+            <a href="https://instagram.com/yam_pilates" target="_blank" rel="noopener" class="btn btn--outline">Seguinos en Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECCIÓN 2 · EL ESPACIO ============ -->
+    <section class="espacio" id="el-espacio">
+      <div class="espacio__bg">
+        <img src="v2-assets/el-espacio-fondo.jpg" alt="Interior del estudio de pilates Yam studio, luminoso y con equipos reformer">
+        <span class="overlay overlay--espacio" aria-hidden="true"></span>
+      </div>
+
+      <div class="container espacio__layout">
+        <article class="card card--light espacio__card reveal">
+          <h2 class="section-title">Un lugar para fluir</h2>
+
+          <p>Yam studio es un espacio íntimo y luminoso, pensado para que entrenes con calma y foco. Cada detalle está cuidado para que te sientas cómoda desde que entrás: pocas personas por clase, tu ritmo respetado y la atención puesta en vos.</p>
+
+          <p>Trabajamos pilates reformer y mat en grupos reducidos. No hacemos clases sueltas ni entrenamientos genéricos: acompañamos tu progreso con criterio y progresión, para que cada clase sume a la siguiente.</p>
+
+          <ul class="pilares" role="list">
+            <li>Grupos reducidos — atención real en cada clase.</li>
+            <li>Reformer y mat — con criterio y progresión.</li>
+            <li>Espacio íntimo y luminoso — pensado para tu bienestar.</li>
+          </ul>
+
+          <div class="paola">
+            <figure class="foto foto--secundaria paola__foto">
+              <img src="v2-assets/paola.jpg" alt="Paola Parra guiando una clase de pilates mat en Yam studio">
+              <span class="overlay overlay--paola" aria-hidden="true"></span>
+            </figure>
+            <div class="paola__texto">
+              <h3 class="paola__nombre">Paola Parra</h3>
+              <p class="paola__rol">Instructora y dueña de Yam studio</p>
+              <p>«Soy Paola Parra, instructora y dueña de Yam studio. Me gusta acompañar de cerca, mirar a cada persona y armar un recorrido que tenga sentido para vos. Te espero para movernos juntas.»</p>
+            </div>
+          </div>
+
+          <div class="espacio__cta">
+            <!-- TODO: reemplazar por el link real de WhatsApp: https://wa.me/54XXXXXXXXXX -->
+            <a href="#" data-wa="" class="btn btn--dark">Reservá tu lugar</a>
+            <p class="nota">Tarifas y disponibilidad por consulta directa.</p>
+          </div>
+        </article>
+
+        <figure class="foto foto--secundaria espacio__detalle reveal">
+          <img src="v2-assets/el-espacio-detalle.jpg" alt="Detalle de una clase de reformer en Yam studio: piernas trabajando en las correas">
+          <span class="overlay overlay--detalle" aria-hidden="true"></span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ SECCIÓN 3 · CONTACTO Y DATOS DE YAM STUDIO ============ -->
+    <section class="contacto" id="contacto">
+      <div class="container">
+        <div class="card card--dark contacto__card reveal">
+          <h2 class="section-title section-title--clara">Contacto y ubicación</h2>
+          <p class="contacto__intro">¿Tenés ganas de empezar o querés saber más? Escribinos y coordinamos tu primera clase.</p>
+
+          <dl class="contacto__datos">
+            <div class="contacto__item">
+              <dt>Dónde estamos</dt>
+              <dd>
+                Puan 1873, Punta Mogotes, Mar del Plata, Argentina.<br>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Puan+1873%2C+Punta+Mogotes%2C+Mar+del+Plata" target="_blank" rel="noopener" class="link-claro">Ver en Google Maps</a>
+              </dd>
+            </div>
+            <div class="contacto__item">
+              <dt>Instagram</dt>
+              <dd><a href="https://instagram.com/yam_pilates" target="_blank" rel="noopener" class="link-claro">Mirá el día a día en Instagram — @yam_pilates</a></dd>
+            </div>
+            <div class="contacto__item">
+              <dt>Tarifas</dt>
+              <dd>Tarifas y disponibilidad por consulta directa.</dd>
+            </div>
+          </dl>
+
+          <div class="contacto__cta">
+            <!-- TODO: reemplazar por el link real de WhatsApp: https://wa.me/54XXXXXXXXXX -->
+            <a href="#" data-wa="" class="btn btn--primary">Escribinos por WhatsApp</a>
+            <p class="nota nota--clara">Te respondemos a la brevedad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cierre reveal">
+    <p class="cierre__marca">Yam studio</p>
+    <p class="cierre__slogan">La energía de fluir en movimiento</p>
+    <p class="cierre__pie">© 2026 Yam studio. Punta Mogotes, Mar del Plata.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
