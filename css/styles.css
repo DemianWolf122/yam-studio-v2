@@ -275,6 +275,17 @@ a {
   padding: 5.5rem 1.5rem 3rem;
 }
 
+/* Ocupa el espacio libre y centra el título verticalmente en el hero,
+   dejando los botones (hero__bottom) apoyados abajo. */
+.hero__top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
 .hero__title {
   display: flex;
   flex-direction: column;
